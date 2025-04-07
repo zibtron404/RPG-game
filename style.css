@@ -1,0 +1,57 @@
+h1 {
+    color: rgb(255, 15, 7);
+    font-size: 2em;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.attributes-title {
+    display: block; 
+    text-align: left; 
+    font-size: 1.5em; 
+    margin: 30px 0 0 15px;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+/* Štýly pre tlačidlá */
+.class-button {
+    background-color: #007bff; /* Modrá farba pozadia */
+    color: white; /* Biela farba textu */
+    font-size: 1.2em; /* Veľkosť textu */
+    padding: 10px 20px; /* Vnútorné odsadenie */
+    border: none; /* Odstránenie okrajov */
+    border-radius: 8px; /* Zaoblené rohy */
+    cursor: pointer; /* Zmena kurzora na ukazovateľ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Jemný tieň */
+    transition: all 0.3s ease; /* Plynulý prechod pri hover */
+}
+
+/* Efekt pri hover */
+.class-button:hover {
+    background-color: #0056b3; /* Tmavšia modrá pri hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Zvýraznený tieň */
+}
+
+/* Efekt pri kliknutí */
+.class-button:active {
+    background-color: #003f7f; /* Ešte tmavšia modrá pri kliknutí */
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); /* Znížený tieň */
+    transform: translateY(1px); /* Jemné stlačenie tlačidla */
+}
+
+
+
+#character-image {
+    margin-top: 20px;
+    border: 2px solid #007bff; /* Rámček okolo obrázka */
+    border-radius: 10px; /* Zaoblené rohy */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Jemný tieň */
+}
