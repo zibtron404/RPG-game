@@ -61,13 +61,11 @@ body {
 #class-display {
     display: flex;
     align-items: center;
-    /* Vertikálne zarovná obsah na stred */
     justify-content: center;
-    /* Horizontálne zarovná obsah na stred */
     gap: 10px;
-    /* Zmenšená medzera medzi obrázkom a atribútmi */
     margin-top: 20px;
 }
+
 #class-selection {
     text-align: center;
     border: #ff0404 solid 2px;
