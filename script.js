@@ -2,6 +2,9 @@ const warriorButton = document.getElementById('warrior');
 const mageButton = document.getElementById('mage');
 const archerButton = document.getElementById('archer');
 const characterImage = document.getElementById('character-image');
+const startGameButton = document.getElementById('start-game'); 
+
+let playerClass = null; 
 
 const strength = document.getElementById('strength');
 const intelligence = document.getElementById('intelligence');
@@ -21,14 +24,24 @@ function updateAttributes(attributes) {
     level.innerHTML = `<strong>Level</strong>: ${attributes.level}`;
 }
 
-// Funkcia na zmenu obrázka
 function changeImage(imagePath) {
-    characterImage.src = imagePath; // Nastaví cestu k obrázku
-    characterImage.style.display = 'block'; // Zobrazí obrázok, ak bol skrytý
+    characterImage.src = imagePath;
+}
+
+function selectClass(className, attributes, imagePath) {
+    playerClass = className; 
+    updateAttributes(attributes); 
+    changeImage(imagePath); 
+}
+
+function lockClassSelection() {
+    warriorButton.disabled = true;
+    mageButton.disabled = true;
+    archerButton.disabled = true;
 }
 
 warriorButton.addEventListener('click', () => {
-    updateAttributes({
+    selectClass('Warrior', {
         strength: 10,
         intelligence: 2,
         agility: 5,
@@ -36,12 +49,11 @@ warriorButton.addEventListener('click', () => {
         mana: 0,
         stamina: 10,
         level: 1
-    });
-    changeImage('warrior.png'); // Cesta k obrázku bojovníka
+    }, 'warrior.png');
 });
 
 mageButton.addEventListener('click', () => {
-    updateAttributes({
+    selectClass('Mage', {
         strength: 2,
         intelligence: 10,
         agility: 4,
@@ -49,12 +61,11 @@ mageButton.addEventListener('click', () => {
         mana: 15,
         stamina: 5,
         level: 1
-    });
-    changeImage('mage.png'); // Cesta k obrázku mága
+    }, 'mage.png');
 });
 
 archerButton.addEventListener('click', () => {
-    updateAttributes({
+    selectClass('Archer', {
         strength: 5,
         intelligence: 4,
         agility: 10,
@@ -62,6 +73,16 @@ archerButton.addEventListener('click', () => {
         mana: 5,
         stamina: 8,
         level: 1
-    });
-    changeImage('archer.png'); // Cesta k obrázku lukostrelca
+    }, 'archer.png');
+});
+
+
+startGameButton.addEventListener('click', () => {
+    if (playerClass === null) {
+        alert('Please select a class before starting the game!');
+    } else {
+        alert(`Starting the game as a ${playerClass}!`);
+        lockClassSelection(); 
+        
+    }
 });
