@@ -2,9 +2,10 @@ const warriorButton = document.getElementById('warrior');
 const mageButton = document.getElementById('mage');
 const archerButton = document.getElementById('archer');
 const characterImage = document.getElementById('character-image');
-const startGameButton = document.getElementById('start-game'); 
+const startGameButton = document.getElementById('start-game');
 
-let playerClass = null; 
+let playerClass = null;
+const characterName = document.getElementById('character-name');
 
 const strength = document.getElementById('strength');
 const intelligence = document.getElementById('intelligence');
@@ -29,9 +30,9 @@ function changeImage(imagePath) {
 }
 
 function selectClass(className, attributes, imagePath) {
-    playerClass = className; 
-    updateAttributes(attributes); 
-    changeImage(imagePath); 
+    playerClass = className;
+    updateAttributes(attributes);
+    changeImage(imagePath);
 }
 
 function lockClassSelection() {
@@ -77,12 +78,15 @@ archerButton.addEventListener('click', () => {
 });
 
 
-startGameButton.addEventListener('click', () => {
-    if (playerClass === null) {
+
+startGameButton.addEventListener('click', (event) => {
+    if (playerClass === null || characterName.value.trim() === '') {
+        alert('Please select a class and enter a character name before starting the game!');
         alert('Please select a class before starting the game!');
+        event.preventDefault();
     } else {
-        alert(`Starting the game as a ${playerClass}!`);
-        lockClassSelection(); 
-        
+        alert(`Starting the game as a ${playerClass} ${characterName.value}!`);
+        lockClassSelection();
+
     }
 });

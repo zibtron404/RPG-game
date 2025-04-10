@@ -45,9 +45,9 @@ body {
 
 
 .class-button:active {
-    background-color: #003f7f;
+    background-color: #28a745;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
-    transform: translateY(1px);
+    border: 2px solid #1e7e34;
 }
 
 
