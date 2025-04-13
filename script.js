@@ -3,9 +3,7 @@ const mageButton = document.getElementById('mage');
 const archerButton = document.getElementById('archer');
 const characterImage = document.getElementById('character-image');
 const startGameButton = document.getElementById('start-game');
-
 let playerClass = null;
-const characterName = document.getElementById('character-name');
 
 const strength = document.getElementById('strength');
 const intelligence = document.getElementById('intelligence');
@@ -14,6 +12,21 @@ const health = document.getElementById('health');
 const mana = document.getElementById('mana');
 const stamina = document.getElementById('stamina');
 const level = document.getElementById('level');
+const name = document.getElementById('hero-name');
+const confirmNameButton = document.getElementById('confirm-name');
+const characterNameInput = document.getElementById('character-name');
+const heroNameDisplay = document.getElementById('hero-name');
+const descriptionText = document.getElementById('description-text');
+
+confirmNameButton.addEventListener('click', () => {
+    const name = characterNameInput.value.trim();
+    if (name) {
+        heroNameDisplay.textContent = `Name: ${name}`;
+    }
+    else {
+        heroNameDisplay.textContent = 'Name: (No name entered)';
+    }
+});
 
 function updateAttributes(attributes) {
     strength.innerHTML = `<strong>Strength</strong>: ${attributes.strength}`;
@@ -36,57 +49,37 @@ function selectClass(className, attributes, imagePath) {
 }
 
 function lockClassSelection() {
-    warriorButton.disabled = true;
-    mageButton.disabled = true;
-    archerButton.disabled = true;
+    document.querySelectorAll('.class-button').forEach(button => {
+        button.disabled = true;
+    });
 }
 
-warriorButton.addEventListener('click', () => {
-    selectClass('Warrior', {
-        strength: 10,
-        intelligence: 2,
-        agility: 5,
-        health: 15,
-        mana: 0,
-        stamina: 10,
-        level: 1
-    }, 'warrior.png');
+const classes = {
+    Warrior: { attributes: { strength: 10, intelligence: 2, agility: 5, health: 15, mana: 0, stamina: 10, level: 1 }, image: 'warrior.png' },
+    Mage: { attributes: { strength: 2, intelligence: 10, agility: 4, health: 8, mana: 15, stamina: 5, level: 1 }, image: 'mage.png' },
+    Archer: { attributes: { strength: 5, intelligence: 4, agility: 10, health: 10, mana: 5, stamina: 8, level: 1 }, image: 'archer.png' }
+};
+
+const classDescriptions = {
+    Warrior: 'The Warrior is a strong melee fighter with high health and stamina.',
+    Mage: 'The Mage uses powerful spells and has high intelligence and mana.',
+    Archer: 'The Archer is agile and excels at ranged attacks with high agility.'
+};
+
+Object.keys(classes).forEach(className => {
+    document.getElementById(className.toLowerCase()).addEventListener('click', () => {
+        const { attributes, image } = classes[className];
+        selectClass(className, attributes, image);
+        descriptionText.textContent = classDescriptions[className];
+    });
 });
-
-mageButton.addEventListener('click', () => {
-    selectClass('Mage', {
-        strength: 2,
-        intelligence: 10,
-        agility: 4,
-        health: 8,
-        mana: 15,
-        stamina: 5,
-        level: 1
-    }, 'mage.png');
-});
-
-archerButton.addEventListener('click', () => {
-    selectClass('Archer', {
-        strength: 5,
-        intelligence: 4,
-        agility: 10,
-        health: 10,
-        mana: 5,
-        stamina: 8,
-        level: 1
-    }, 'archer.png');
-});
-
-
 
 startGameButton.addEventListener('click', (event) => {
     if (playerClass === null || characterName.value.trim() === '') {
         alert('Please select a class and enter a character name before starting the game!');
-        alert('Please select a class before starting the game!');
         event.preventDefault();
     } else {
         alert(`Starting the game as a ${playerClass} ${characterName.value}!`);
         lockClassSelection();
-
     }
 });
