@@ -83,3 +83,4 @@ startGameButton.addEventListener('click', (event) => {
         lockClassSelection();
     }
 });
+ // you will have will have quiz with 4 answers and if you choose the right one you will get a experience points and if you choose the wrong one you will lose health points and if you lose all your health points you will die and the game will end
