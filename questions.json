@@ -1,0 +1,202 @@
+[
+    {
+        "question": "What is the correct syntax to output 'Hello World' in JavaScript?",
+        "answers": [
+            "console.log('Hello World');",
+            "print('Hello World');",
+            "echo('Hello World');",
+            "document.write('Hello World');"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Which operator is used to assign a value to a variable in JavaScript?",
+        "answers": [
+            "=",
+            "==",
+            "===",
+            "=>"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "How do you declare a JavaScript variable?",
+        "answers": [
+            "var myVariable;",
+            "variable myVariable;",
+            "v myVariable;",
+            "let myVariable;"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Which method is used to add an element to the end of an array?",
+        "answers": [
+            "push()",
+            "pop()",
+            "add()",
+            "append()"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What does `NaN` stand for in JavaScript?",
+        "answers": [
+            "Not a Number",
+            "Null and None",
+            "Not a Null",
+            "None and Null"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the correct way to write a JavaScript array?",
+        "answers": [
+            "var colors = ['red', 'green', 'blue'];",
+            "var colors = 'red', 'green', 'blue';",
+            "var colors = (1:'red', 2:'green', 3:'blue');",
+            "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue');"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "How do you write a conditional statement in JavaScript?",
+        "answers": [
+            "if (x > y) {}",
+            "if x > y then {}",
+            "if x > y {}",
+            "if x > y: {}"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the correct way to write a JavaScript function?",
+        "answers": [
+            "function myFunction() {}",
+            "function:myFunction() {}",
+            "function = myFunction() {}",
+            "def myFunction() {}"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Which event occurs when the user clicks on an HTML element?",
+        "answers": [
+            "onclick",
+            "onchange",
+            "onmouseover",
+            "onmouseclick"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "How do you add a comment in JavaScript?",
+        "answers": [
+            "// This is a comment",
+            "<!-- This is a comment -->",
+            "# This is a comment",
+            "/* This is a comment */"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the difference between '==' and '===' in JavaScript?",
+        "answers": [
+            "'==' checks for value equality, '===' checks for value and type equality",
+            "'==' checks for type equality, '===' checks for value equality",
+            "'==' and '===' are the same",
+            "'==' is used for strings, '===' is used for numbers"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the purpose of the 'use strict' directive in JavaScript?",
+        "answers": [
+            "It enables strict mode, which catches common coding mistakes",
+            "It makes JavaScript run faster",
+            "It disables deprecated features",
+            "It allows the use of modern JavaScript features"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is a closure in JavaScript?",
+        "answers": [
+            "A function that has access to its own scope, the outer function's scope, and the global scope",
+            "A function that is immediately invoked",
+            "A function that is used to close a loop",
+            "A function that is used to handle asynchronous operations"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the output of the following code?\n`console.log(typeof NaN);`",
+        "answers": [
+            "'number'",
+            "'NaN'",
+            "'undefined'",
+            "'object'"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the difference between 'var', 'let', and 'const' in JavaScript?",
+        "answers": [
+            "'var' is function-scoped, 'let' and 'const' are block-scoped",
+            "'var' and 'let' are the same, 'const' is immutable",
+            "'var' is deprecated, 'let' and 'const' are modern alternatives",
+            "'var' is block-scoped, 'let' and 'const' are function-scoped"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the purpose of the 'this' keyword in JavaScript?",
+        "answers": [
+            "It refers to the object that is currently executing the code",
+            "It refers to the global object",
+            "It refers to the parent object",
+            "It refers to the function itself"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the output of the following code?\n`console.log(0.1 + 0.2 === 0.3);`",
+        "answers": [
+            "false",
+            "true",
+            "undefined",
+            "NaN"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the difference between 'call()', 'apply()', and 'bind()' in JavaScript?",
+        "answers": [
+            "'call()' and 'apply()' invoke a function, 'bind()' returns a new function",
+            "'call()' and 'bind()' are the same, 'apply()' is different",
+            "'call()' and 'apply()' are used for asynchronous code, 'bind()' is not",
+            "'call()' and 'apply()' are deprecated, 'bind()' is the modern alternative"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the purpose of the 'Promise' object in JavaScript?",
+        "answers": [
+            "It represents the eventual completion (or failure) of an asynchronous operation",
+            "It is used to handle synchronous code",
+            "It is a replacement for callbacks",
+            "It is used to create new objects"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "What is the output of the following code?\n`console.log([] + []);`",
+        "answers": [
+            "'' (empty string)",
+            "'undefined'",
+            "'object'",
+            "'[]'"
+        ],
+        "correct": 0
+    }
+]
