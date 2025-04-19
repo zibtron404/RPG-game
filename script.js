@@ -21,10 +21,9 @@ const descriptionText = document.getElementById('description-text');
 confirmNameButton.addEventListener('click', () => {
     const name = characterNameInput.value.trim();
     if (name) {
-        heroNameDisplay.textContent = `Name: ${name}`;
-    }
-    else {
-        heroNameDisplay.textContent = 'Name: (No name entered)';
+        heroNameDisplay.innerHTML = `<b>Name:</b> ${name}`; // Použitie innerHTML na vykreslenie HTML značiek
+    } else {
+        heroNameDisplay.innerHTML = '<b>Name:</b> (No name entered)'; // Použitie innerHTML
     }
 });
 
@@ -83,4 +82,4 @@ startGameButton.addEventListener('click', (event) => {
         lockClassSelection();
     }
 });
- // you will have will have quiz with 4 answers and if you choose the right one you will get a experience points and if you choose the wrong one you will lose health points and if you lose all your health points you will die and the game will end
+// you will have will have quiz with 4 answers and if you choose the right one you will get a experience points and if you choose the wrong one you will lose health points and if you lose all your health points you will die and the game will end

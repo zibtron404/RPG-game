@@ -1,5 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 h1 {
-    color: rgb(255, 15, 7);
+    color: #DBFFCB;
     font-size: 3em;
     text-align: center;
 }
@@ -16,7 +23,7 @@ p {
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: #FF8282;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     padding-left: 24px;
@@ -52,23 +59,79 @@ body {
 
 
 
+figure {
+    display: flex;
+    flex-direction: column;
+    /* Obrázok a popis budú usporiadané vertikálne */
+    align-items: center;
+    /* Zarovná obrázok a popis na stred */
+}
+
 #character-image {
-    margin-top: 20px;
+    object-fit: cover;
+    /* Zachová proporcie obrázka */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #class-display {
     display: flex;
-    align-items: center;
+    /* Flexbox na usporiadanie obsahu vedľa seba */
+    align-items: flex-start;
+    /* Zarovná obsah na vrch */
     justify-content: center;
-    gap: 10px;
+    /* Zarovná obsah na stred horizontálne */
+    gap: 20px;
+    /* Medzera medzi fotkou a atribútmi */
     margin-top: 20px;
 }
 
 #class-selection {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    /* Posunie element presne do stredu */
     text-align: center;
     border: #ff0404 solid 2px;
     border-radius: 15px;
     background-color: ghostwhite;
+    min-height: 800px;
+    max-height: 1000px;
+    max-width: 1000px;
+    min-width: 800px;
+}
+
+.attributes ul {
+    margin-left: 20px;
+    /* Pridá extra medzeru medzi obrázkom a zoznamom */
+    list-style-type: none;
+    /* Odstráni bodky zo zoznamu (voliteľné) */
+    padding: 0;
+}
+
+#attributes {
+    display: flex;
+    flex-direction: column;
+    /* Atribúty budú usporiadané vertikálne */
+    justify-content: flex-start;
+    /* Zarovná atribúty na vrch */
+    text-align: left;
+    /* Zarovná text naľavo */
+}
+
+#attributes ul {
+    list-style-type: none;
+    /* Odstráni bodky zo zoznamu */
+    padding: 0;
+    /* Odstráni vnútorné odsadenie */
+    margin: 0;
+    /* Odstráni vonkajšie odsadenie */
+}
+
+#description-text {
+    font-size: 15px;
+}
+#hero-name {
+    margin-bottom: 20px;
 }
