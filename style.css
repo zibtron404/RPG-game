@@ -123,3 +123,7 @@ figure {
 #hero-name {
     margin-bottom: 20px;
 }
+
+figure img {
+    background-color: white;
+}
