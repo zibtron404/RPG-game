@@ -1,129 +1,206 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: #FF8282;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    max-width: 100%;
+}
 
 h1 {
     color: #DBFFCB;
-    font-size: 3em;
+    font-size: 45px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1vw;
+    max-width: 100%;
 }
 
 .attributes-title {
     display: block;
     text-align: left;
-    font-size: 1.5em;
-    margin: 30px 0 0 15px;
+    font-size: 1.2vw;
+    margin: 20px 0 0 10px;
+    max-width: 100%;
 }
 
-body {
-    background-color: #FF8282;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
-
-.class-button {
+#start-game {
     background-color: #BEE4D0;
-    color: #FF6363;
-    margin: 5px;
-    font-size: 1.2em;
-    padding: 10px 20px;
+    color: #FF8282;
+    margin: 10px;
+    font-size: 16px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    max-width: 100%;
 }
 
-
-.class-button:hover {
+#start-game:hover {
     background-color: #DBFFCB;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-.class-button:active {
+#start-game:active {
     background-color: #28a745;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     border: 2px solid #1e7e34;
 }
 
-
-
-figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #character-image {
-    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#class-display {
+.class-display {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px; 
+    max-width: 100%; 
+    overflow: hidden; 
 }
 
-#class-selection {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-    text-align: center;
-    border: #ff0404 solid 2px;
-    border-radius: 15px;
-    background-color: #DBFFCB;
-    min-height: 800px;
-    max-height: 1000px;
-    max-width: 1000px;
-    min-width: 800px;
-}
-
-.attributes ul {
-    margin-left: 20px;
-    list-style-type: none;
-    padding: 0;
-}
-
-#attributes {
+.class-selection {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    text-align: left;
-    padding: 30px;
+    align-items: center;
+    justify-content: center;
     border-radius: 15px;
     background-color: #BEE4D0;
+    padding: 32px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: auto;
+    width: 900px; 
+    height: 900px; 
 }
 
-#attributes ul {
+.attributes li {
+    margin-left: 24px;
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    padding: 4px;
+    max-width: 100%;
+    color:#FFFFFF;
+}
+
+.attributes h3 {
+    color: #DBFFCB;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.attributes {
+    position: fixed;
+    top: 195px;
+    right: 250px;
+    background-color: #BEE4D0;
+    border-radius: 15px;
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 300px;
+    min-height: 320px;
 }
 
 #description-text {
-    font-size: 15px;
-}
-#hero-name {
-    margin-bottom: 20px;
+    font-size: 18px;
+    max-width: 100%;
 }
 
-figure img {
+#hero-name {
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+.slider {
+    position: relative;
+    width: 100%; 
+    max-width: 766px; 
+    margin: auto; 
+    overflow: hidden; 
+    height: 677px; 
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slides img {
+    display: none;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
     background-color: white;
+}
+
+img.displaySlide {
+    display: block;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 15px; 
+    background-color: white; 
+    flex-shrink: 1;
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background-color: #FFFFFF;
+    color: #FF8282;
+    border: none;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 15px;
+}
+
+.prev {
+    left: 16px;
+}
+
+.next {
+    right: 16px;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#class-name {
+    font-size: 30px;
+    color:#FF8282;
 }

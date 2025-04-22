@@ -4,62 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUIZ RPG game</title>
+    <title>QUIZ RPG Game</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1> QUIZ RPG GAME</h1>
+        <h1>QUIZ RPG GAME</h1>
     </header>
 
     <main>
-
-        <section id="introduction">
-            <h2>Welcome to the RPG game!</h2>
-            <aside>
-
-                <p>Choose your character class and start your journey!</p>
-            </aside>
-        </section>
-
-
-        <section id="class-selection">
-            <h3>Pick a class:</h3>
-            <div class="class-selection">
-                <button class="class-button" id="warrior">Warrior</button>
-                <button class="class-button" id="mage">Mage</button>
-                <button class="class-button" id="archer">Archer</button>
+        <section class="class-selection">
+            <div class="class-display">
+                <h2 id="class-name">Warrior</h2> 
+                <div class="slider">
+                    <div class="slides">
+                        <img class="slide" src="warrior.png" alt="Warrior">
+                        <img class="slide" src="mage.png" alt="Mage">
+                        <img class="slide" src="archer.png" alt="Archer">
+                    </div>
+                    <div class="slider-buttons">
+                        <button class="prev" onclick="prevSlide()">&#10094;</button>
+                        <button class="next" onclick="nextSlide()">&#10095;</button>
+                    </div>
+                </div>
             </div>
             <div class="name-selection">
                 <label for="character-name">Enter your character's name:</label>
                 <input type="text" id="character-name" placeholder="Character Name" required>
                 <button id="confirm-name">Confirm Name</button>
             </div>
-            <div id="class-display">
-                <figure>
-                    <img id="character-image" src="blank.png" alt="Character Image" height="400" width="500">
-                    <figcaption id="description-text">Select a class to see its description.</figcaption>
-                </figure>
-                <div id="attributes">
-                    <p id="hero-name"><b>Name:</b> </p>
-                    <h3>Your Attributes:</h3>
-                    <ul>
-                        <li id="strength"><strong>Strength</strong>: 0</li>
-                        <li id="intelligence"><strong>Intelligence</strong>: 0</li>
-                        <li id="agility"><strong>Agility</strong>: 0</li>
-                        <li id="health"><strong>Health</strong>: 0</li>
-                        <li id="mana"><strong>Mana</strong>: 0</li>
-                        <li id="stamina"><strong>Stamina</strong>: 0</li>
-                        <li id="level"><strong>Level</strong>: 0</li>
-                    </ul>
-                </div>
-            </div>
-            <a href="game.html"><button id="start-game">Start Game</button></a>
+            <button id="start-game">Start Game</button>
+        </section>
+        <section class="attributes">
+            <h3>Your Attributes:</h3>
+            <ul>
+                <li id="strength"><strong>Strength</strong>: 0</li>
+                <li id="intelligence"><strong>Intelligence</strong>: 0</li>
+                <li id="agility"><strong>Agility</strong>: 0</li>
+                <li id="health"><strong>Health</strong>: 0</li>
+                <li id="mana"><strong>Mana</strong>: 0</li>
+                <li id="stamina"><strong>Stamina</strong>: 0</li>
+                <li id="level"><strong>Level</strong>: 0</li>
+            </ul>
         </section>
     </main>
+    <footer>
+    </footer>
     <script src="script.js"></script>
 </body>
-
 </html>

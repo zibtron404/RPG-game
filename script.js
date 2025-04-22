@@ -21,9 +21,9 @@ const descriptionText = document.getElementById('description-text');
 confirmNameButton.addEventListener('click', () => {
     const name = characterNameInput.value.trim();
     if (name) {
-        heroNameDisplay.innerHTML = `<b>Name:</b> ${name}`; // Použitie innerHTML na vykreslenie HTML značiek
+        heroNameDisplay.innerHTML = `<b>Name:</b> ${name}`; 
     } else {
-        heroNameDisplay.innerHTML = '<b>Name:</b> (No name entered)'; // Použitie innerHTML
+        heroNameDisplay.innerHTML = '<b>Name:</b> (No name entered)'; 
     }
 });
 
@@ -65,14 +65,6 @@ const classDescriptions = {
     Archer: 'The Archer is agile and excels at ranged attacks with high agility.'
 };
 
-Object.keys(classes).forEach(className => {
-    document.getElementById(className.toLowerCase()).addEventListener('click', () => {
-        const { attributes, image } = classes[className];
-        selectClass(className, attributes, image);
-        descriptionText.textContent = classDescriptions[className];
-    });
-});
-
 startGameButton.addEventListener('click', (event) => {
     if (playerClass === null || characterName.value.trim() === '') {
         alert('Please select a class and enter a character name before starting the game!');
@@ -82,4 +74,74 @@ startGameButton.addEventListener('click', (event) => {
         lockClassSelection();
     }
 });
+
+//IMAGE SLIDER 
+
+const slides = document.querySelectorAll('.slides img');
+let slideIndex = 0;
+let intervalId = null;
+
+document.addEventListener('DOMContentLoaded', initializeSlider);
+
+function initializeSlider() {
+    if (slides.length > 0) {
+        slides[slideIndex].classList.add("displaySlide");
+        updateAttributesForSlide(slideIndex); 
+        intervalId = setInterval(nextSlide, 5000);
+    }
+}
+
+function showSlide(index) {
+    if (index >= slides.length) {
+        index = 0; 
+    } else if (index < 0) {
+        index = slides.length - 1; 
+    }
+
+    slides.forEach(slide => {
+        slide.classList.remove("displaySlide"); 
+    });
+
+    slides[index].classList.add("displaySlide"); 
+
+    
+    const className = slides[index].alt; 
+    const classNameElement = document.getElementById('class-name'); 
+    classNameElement.textContent = className; 
+
+    updateAttributesForSlide(index); 
+}
+
+function restartInterval() {
+    clearInterval(intervalId); 
+    intervalId = setInterval(nextSlide, 5000); 
+}
+
+function prevSlide() {
+    slideIndex--;
+    if (slideIndex < 0) {
+        slideIndex = slides.length - 1; 
+    }
+    showSlide(slideIndex);
+    restartInterval(); 
+}
+
+function nextSlide() {
+    slideIndex++;
+    if (slideIndex >= slides.length) {
+        slideIndex = 0; 
+    }
+    showSlide(slideIndex);
+    restartInterval(); 
+}
+
+function updateAttributesForSlide(index) {
+    const className = slides[index].alt; 
+    const selectedClass = classes[className];
+    if (selectedClass) {
+        updateAttributes(selectedClass.attributes); 
+        descriptionText.textContent = classDescriptions[className]; 
+    }
+}
+
 // you will have will have quiz with 4 answers and if you choose the right one you will get a experience points and if you choose the wrong one you will lose health points and if you lose all your health points you will die and the game will end
