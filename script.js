@@ -21,9 +21,20 @@ const descriptionText = document.getElementById('description-text');
 confirmNameButton.addEventListener('click', () => {
     const name = characterNameInput.value.trim();
     if (name) {
-        heroNameDisplay.innerHTML = `<b>Name:</b> ${name}`; 
+        heroNameDisplay.innerHTML = `<b>Your name:</b> ${name}`;
     } else {
-        heroNameDisplay.innerHTML = '<b>Name:</b> (No name entered)'; 
+        heroNameDisplay.innerHTML = '<b>Your name:</b> (No name entered)';
+    }
+});
+
+characterNameInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const name = characterNameInput.value.trim();
+        if (name) {
+            heroNameDisplay.innerHTML = `<b>Your name:</b> ${name}`;
+        } else {
+            heroNameDisplay.innerHTML = '<b>Your name:</b> (No name entered)';
+        }
     }
 });
 
@@ -34,7 +45,6 @@ function updateAttributes(attributes) {
     health.innerHTML = `<strong>Health</strong>: ${attributes.health}`;
     mana.innerHTML = `<strong>Mana</strong>: ${attributes.mana}`;
     stamina.innerHTML = `<strong>Stamina</strong>: ${attributes.stamina}`;
-    level.innerHTML = `<strong>Level</strong>: ${attributes.level}`;
 }
 
 function changeImage(imagePath) {
@@ -54,15 +64,17 @@ function lockClassSelection() {
 }
 
 const classes = {
-    Warrior: { attributes: { strength: 10, intelligence: 2, agility: 5, health: 15, mana: 0, stamina: 10, level: 1 }, image: 'warrior.png' },
-    Mage: { attributes: { strength: 2, intelligence: 10, agility: 4, health: 8, mana: 15, stamina: 5, level: 1 }, image: 'mage.png' },
-    Archer: { attributes: { strength: 5, intelligence: 4, agility: 10, health: 10, mana: 5, stamina: 8, level: 1 }, image: 'archer.png' }
+    Warrior: { attributes: { strength: 10, intelligence: 2, agility: 5, health: 15, mana: 3, stamina: 10 }, image: 'warrior.png' },
+    Mage: { attributes: { strength: 2, intelligence: 10, agility: 4, health: 8, mana: 15, stamina: 5 }, image: 'mage.png' },
+    Archer: { attributes: { strength: 5, intelligence: 4, agility: 10, health: 10, mana: 5, stamina: 8 }, image: 'archer.png' },
+    "Warrior Cat": { attributes: { strength: 8, intelligence: 6, agility: 9, health: 12, mana: 7, stamina: 10 }, image: 'warrior-cat.png' }
 };
 
 const classDescriptions = {
     Warrior: 'The Warrior is a strong melee fighter with high health and stamina.',
     Mage: 'The Mage uses powerful spells and has high intelligence and mana.',
-    Archer: 'The Archer is agile and excels at ranged attacks with high agility.'
+    Archer: 'The Archer is agile and excels at ranged attacks with high agility.',
+    "Warrior Cat": 'The Warrior Cat is a balanced fighter with agility and intelligence, excelling in both combat and strategy.'
 };
 
 startGameButton.addEventListener('click', (event) => {
@@ -86,61 +98,61 @@ document.addEventListener('DOMContentLoaded', initializeSlider);
 function initializeSlider() {
     if (slides.length > 0) {
         slides[slideIndex].classList.add("displaySlide");
-        updateAttributesForSlide(slideIndex); 
+        updateAttributesForSlide(slideIndex);
         intervalId = setInterval(nextSlide, 5000);
     }
 }
 
 function showSlide(index) {
     if (index >= slides.length) {
-        index = 0; 
+        index = 0;
     } else if (index < 0) {
-        index = slides.length - 1; 
+        index = slides.length - 1;
     }
 
     slides.forEach(slide => {
-        slide.classList.remove("displaySlide"); 
+        slide.classList.remove("displaySlide");
     });
 
-    slides[index].classList.add("displaySlide"); 
+    slides[index].classList.add("displaySlide");
 
-    
-    const className = slides[index].alt; 
-    const classNameElement = document.getElementById('class-name'); 
-    classNameElement.textContent = className; 
 
-    updateAttributesForSlide(index); 
+    const className = slides[index].alt;
+    const classNameElement = document.getElementById('class-name');
+    classNameElement.textContent = className;
+
+    updateAttributesForSlide(index);
 }
 
 function restartInterval() {
-    clearInterval(intervalId); 
-    intervalId = setInterval(nextSlide, 5000); 
+    clearInterval(intervalId);
+    intervalId = setInterval(nextSlide, 5000);
 }
 
 function prevSlide() {
     slideIndex--;
     if (slideIndex < 0) {
-        slideIndex = slides.length - 1; 
+        slideIndex = slides.length - 1;
     }
     showSlide(slideIndex);
-    restartInterval(); 
+    restartInterval();
 }
 
 function nextSlide() {
     slideIndex++;
     if (slideIndex >= slides.length) {
-        slideIndex = 0; 
+        slideIndex = 0;
     }
     showSlide(slideIndex);
-    restartInterval(); 
+    restartInterval();
 }
 
 function updateAttributesForSlide(index) {
-    const className = slides[index].alt; 
+    const className = slides[index].alt;
     const selectedClass = classes[className];
     if (selectedClass) {
-        updateAttributes(selectedClass.attributes); 
-        descriptionText.textContent = classDescriptions[className]; 
+        updateAttributes(selectedClass.attributes);
+        descriptionText.textContent = classDescriptions[className];
     }
 }
 

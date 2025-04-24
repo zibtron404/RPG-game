@@ -17,12 +17,13 @@
     <main>
         <section class="class-selection">
             <div class="class-display">
-                <h2 id="class-name">Warrior</h2> 
+                <h2 id="class-name">Warrior</h2>
                 <div class="slider">
                     <div class="slides">
                         <img class="slide" src="warrior.png" alt="Warrior">
                         <img class="slide" src="mage.png" alt="Mage">
                         <img class="slide" src="archer.png" alt="Archer">
+                        <img class="slide" src="warrior-cat.png" alt="Warrior Cat">
                     </div>
                     <div class="slider-buttons">
                         <button class="prev" onclick="prevSlide()">&#10094;</button>
@@ -30,15 +31,13 @@
                     </div>
                 </div>
             </div>
-            <div class="name-selection">
-                <label for="character-name">Enter your character's name:</label>
-                <input type="text" id="character-name" placeholder="Character Name" required>
-                <button id="confirm-name">Confirm Name</button>
+            <div class="name-and-button">
+                <p id="hero-name"><b>Your name:</b></p>
+                <button id="start-game">START GAME</button>
             </div>
-            <button id="start-game">Start Game</button>
         </section>
         <section class="attributes">
-            <h3>Your Attributes:</h3>
+            <h3>Attributes:</h3>
             <ul>
                 <li id="strength"><strong>Strength</strong>: 0</li>
                 <li id="intelligence"><strong>Intelligence</strong>: 0</li>
@@ -46,12 +45,22 @@
                 <li id="health"><strong>Health</strong>: 0</li>
                 <li id="mana"><strong>Mana</strong>: 0</li>
                 <li id="stamina"><strong>Stamina</strong>: 0</li>
-                <li id="level"><strong>Level</strong>: 0</li>
             </ul>
+        </section>
+        <section class="name-selection">
+            <label for="character-name"><b>Character's name:</b></label>
+            <div>
+                <input type="text" id="character-name" placeholder="Enter your name" required maxlength="15">
+                <button id="confirm-name">Confirm Name</button>
+            </div>
+        </section>
+        <section class="level">
+                <p id="level"><strong>Level</strong>: <span class="level-number">1</span></p>
         </section>
     </main>
     <footer>
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
