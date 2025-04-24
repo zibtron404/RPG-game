@@ -115,7 +115,7 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
     width: 400px;
-    height: 420px;
+    height: 380px;
     min-height: 320px;
 }
 
@@ -207,7 +207,7 @@ img.displaySlide {
 
 .name-selection {
     position: absolute;
-    top: 675px;
+    top: 635px;
     right: 163px;
     background-color: #BEE4D0;
     border-radius: 15px;
