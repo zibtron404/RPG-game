@@ -64,10 +64,10 @@ function lockClassSelection() {
 }
 
 const classes = {
-    Warrior: { attributes: { strength: 10, intelligence: 2, agility: 5, health: 15, mana: 3, stamina: 10 }, image: 'warrior.png' },
-    Mage: { attributes: { strength: 2, intelligence: 10, agility: 4, health: 8, mana: 15, stamina: 5 }, image: 'mage.png' },
-    Archer: { attributes: { strength: 5, intelligence: 4, agility: 10, health: 10, mana: 5, stamina: 8 }, image: 'archer.png' },
-    "Warrior Cat": { attributes: { strength: 8, intelligence: 6, agility: 9, health: 12, mana: 7, stamina: 10 }, image: 'warrior-cat.png' }
+    Warrior: { attributes: { strength: 10, intelligence: 2, agility: 5, health: 15, mana: 3, stamina: 10 }, image: 'resources/images/warrior.png' },
+    Mage: { attributes: { strength: 2, intelligence: 10, agility: 4, health: 8, mana: 15, stamina: 5 }, image: 'resources/images/mage.png' },
+    Archer: { attributes: { strength: 5, intelligence: 4, agility: 10, health: 10, mana: 5, stamina: 8 }, image: 'resources/images/archer.png' },
+    "Warrior Cat": { attributes: { strength: 8, intelligence: 6, agility: 9, health: 12, mana: 7, stamina: 10 }, image: 'resources/images/warrior-cat.png' }
 };
 
 const classDescriptions = {
