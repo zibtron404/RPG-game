@@ -57,12 +57,6 @@ function selectClass(className, attributes, imagePath) {
     changeImage(imagePath);
 }
 
-function lockClassSelection() {
-    document.querySelectorAll('.class-button').forEach(button => {
-        button.disabled = true;
-    });
-}
-
 const classes = {
     Warrior: { attributes: { strength: 10, intelligence: 2, agility: 5, health: 15, mana: 3, stamina: 10 }, image: 'resources/images/warrior.png' },
     Mage: { attributes: { strength: 2, intelligence: 10, agility: 4, health: 8, mana: 15, stamina: 5 }, image: 'resources/images/mage.png' },
@@ -70,19 +64,16 @@ const classes = {
     "Warrior Cat": { attributes: { strength: 8, intelligence: 6, agility: 9, health: 12, mana: 7, stamina: 10 }, image: 'resources/images/warrior-cat.png' }
 };
 
-const classDescriptions = {
-    Warrior: 'The Warrior is a strong melee fighter with high health and stamina.',
-    Mage: 'The Mage uses powerful spells and has high intelligence and mana.',
-    Archer: 'The Archer is agile and excels at ranged attacks with high agility.',
-    "Warrior Cat": 'The Warrior Cat is a balanced fighter with agility and intelligence, excelling in both combat and strategy.'
-};
 
 startGameButton.addEventListener('click', (event) => {
-    if (playerClass === null || characterName.value.trim() === '') {
+    const currentClassName = slides[slideIndex].alt; 
+    const characterNameValue = characterNameInput.value.trim(); 
+
+    if (!currentClassName || characterNameValue === '') {
         alert('Please select a class and enter a character name before starting the game!');
         event.preventDefault();
     } else {
-        alert(`Starting the game as a ${playerClass} ${characterName.value}!`);
+        alert(`Starting the game as a ${currentClassName} named ${characterNameValue}!`);
         lockClassSelection();
     }
 });
