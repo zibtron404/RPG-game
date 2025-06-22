@@ -6,9 +6,11 @@ const startGameButton = document.getElementById('start-game');
 let playerClass = null;
 
 const strength = document.getElementById('strength');
-const intelligence = document.getElementById('intelligence');
+const wisdom = document.getElementById('wisdom');
 const agility = document.getElementById('agility');
 const health = document.getElementById('health');
+const dexterity = document.getElementById('dexterity');
+const charisma = document.getElementById('charisma');
 const mana = document.getElementById('mana');
 const stamina = document.getElementById('stamina');
 const level = document.getElementById('level');
@@ -17,11 +19,15 @@ const confirmNameButton = document.getElementById('confirm-name');
 const characterNameInput = document.getElementById('character-name');
 const heroNameDisplay = document.getElementById('hero-name');
 const descriptionText = document.getElementById('description-text');
+const healthValue = document.getElementById('health-value');
+
 
 confirmNameButton.addEventListener('click', () => {
     const name = characterNameInput.value.trim();
     if (name) {
         heroNameDisplay.innerHTML = `<b>Your name:</b> ${name}`;
+        characterNameInput.remove();
+        confirmNameButton.remove();
     } else {
         heroNameDisplay.innerHTML = '<b>Your name:</b> (No name entered)';
     }
@@ -32,6 +38,8 @@ characterNameInput.addEventListener('keydown', (event) => {
         const name = characterNameInput.value.trim();
         if (name) {
             heroNameDisplay.innerHTML = `<b>Your name:</b> ${name}`;
+            characterNameInput.remove();
+            confirmNameButton.remove();
         } else {
             heroNameDisplay.innerHTML = '<b>Your name:</b> (No name entered)';
         }
@@ -40,11 +48,11 @@ characterNameInput.addEventListener('keydown', (event) => {
 
 function updateAttributes(attributes) {
     strength.innerHTML = `<strong>Strength</strong>: ${attributes.strength}`;
-    intelligence.innerHTML = `<strong>Intelligence</strong>: ${attributes.intelligence}`;
+    wisdom.innerHTML = `<strong>Wisdom</strong>: ${attributes.wisdom}`;
     agility.innerHTML = `<strong>Agility</strong>: ${attributes.agility}`;
-    health.innerHTML = `<strong>Health</strong>: ${attributes.health}`;
-    mana.innerHTML = `<strong>Mana</strong>: ${attributes.mana}`;
-    stamina.innerHTML = `<strong>Stamina</strong>: ${attributes.stamina}`;
+    dexterity.innerHTML = `<strong>Dexterity</strong>: ${attributes.dexterity}`;
+    charisma.innerHTML = `<strong>Charisma</strong>: ${attributes.charisma}`;
+    healthValue.textContent = attributes.health; 
 }
 
 function changeImage(imagePath) {
@@ -58,10 +66,10 @@ function selectClass(className, attributes, imagePath) {
 }
 
 const classes = {
-    Warrior: { attributes: { strength: 10, intelligence: 2, agility: 5, health: 15, mana: 3, stamina: 10 }, image: 'resources/images/warrior.png' },
-    Mage: { attributes: { strength: 2, intelligence: 10, agility: 4, health: 8, mana: 15, stamina: 5 }, image: 'resources/images/mage.png' },
-    Archer: { attributes: { strength: 5, intelligence: 4, agility: 10, health: 10, mana: 5, stamina: 8 }, image: 'resources/images/archer.png' },
-    "Warrior Cat": { attributes: { strength: 8, intelligence: 6, agility: 9, health: 12, mana: 7, stamina: 10 }, image: 'resources/images/warrior-cat.png' }
+    Warrior: { attributes: { strength: 10, wisdom: 2, agility: 5, dexterity: 4, charisma: 3, health: 15 }, image: 'resources/images/warrior.png' },
+    Mage: { attributes: { strength: 2, wisdom: 10, agility: 4, dexterity: 5, charisma: 8, health: 8 }, image: 'resources/images/mage.png' },
+    Archer: { attributes: { strength: 5, wisdom: 4, agility: 10, dexterity: 10, charisma: 6, health: 10 }, image: 'resources/images/archer.png' },
+    "Warrior Cat": { attributes: { strength: 8, wisdom: 6, agility: 9, dexterity: 8, charisma: 7, health: 12 }, image: 'resources/images/warrior-cat.png' }
 };
 
 
@@ -109,8 +117,10 @@ function showSlide(index) {
 
 
     const className = slides[index].alt;
-    const classNameElement = document.getElementById('class-name');
-    classNameElement.textContent = className;
+    const classNameElements = document.getElementsByClassName('class-name');
+    for (let el of classNameElements) {
+        el.textContent = className;
+    }
 
     updateAttributesForSlide(index);
 }
@@ -146,5 +156,6 @@ function updateAttributesForSlide(index) {
         descriptionText.textContent = classDescriptions[className];
     }
 }
+
 
 // you will have will have quiz with 4 answers and if you choose the right one you will get a experience points and if you choose the wrong one you will lose health points and if you lose all your health points you will die and the game will end

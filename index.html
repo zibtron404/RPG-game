@@ -18,7 +18,7 @@
     <main>
         <section class="class-selection">
             <div class="class-display">
-                <h2 id="class-name">Warrior</h2>
+                <h2 class="class-name">Warrior</h2>
                 <div class="slider">
                     <div class="slides">
                         <img class="slide" src="resources/images/warrior.png" alt="Warrior">
@@ -38,28 +38,30 @@
             </div>
         </section>
         <aside class="character-info">
-            <section class="name-selection">
-                <h3>Character's Name</h3>
-                <label for="character-name">Enter your name:</label>
+            <section class="name-selection">            
                 <div class="name">
                     <input type="text" id="character-name" placeholder="Enter your name" required maxlength="15">
                     <button id="confirm-name">Confirm Name</button>
                 </div>
                 <section class="level">
-                <p id="level">Level: <span class="level-number"> 1</span></p>
+                <p id="level">Level: <span class="level-number">1</span> <span class="class-name aside">Warrior</span>
+</p>
                 </section>
                  <section class="attributes">
                     <h3>Attributes</h3>
                         <ul>
                             <li id="strength"><strong>Strength</strong>: 0</li>
-                            <li id="intelligence"><strong>Intelligence</strong>: 0</li>
+                            <li id="wisdom"><strong>Wisdom</strong>: 0</li>
                             <li id="agility"><strong>Agility</strong>: 0</li>
-                            <li id="health"><strong>Health</strong>: 0</li>
-                            <li id="mana"><strong>Mana</strong>: 0</li>
-                            <li id="stamina"><strong>Stamina</strong>: 0</li>
+                            <li id="dexterity"><strong>Dexterity</strong>: 0</li>
+                            <li id="charisma"><strong>Charisma</strong>: 0</li>
                         </ul>
                 </section>
             </section>
+            <div class="health-circle" id="health-circle">
+                <img src="resources/images/heart.png" alt="Health" class="health-icon">
+                <div class="health-value" id="health-value">0</div>
+            </div>
         </aside>
     </main>
     <footer>

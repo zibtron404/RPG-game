@@ -108,7 +108,7 @@ p {
 }
 
 .attributes {
-    background-color: #BEE4D0;
+    background-color: #BEBFE4;
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -189,9 +189,13 @@ img.displaySlide {
     }
 }
 
-#class-name {
+.class-name {
     font-size: 30px;
     color: #FF8282;
+}
+aside .class-name {
+    color: #FFFFFF;
+    font-size: 25px;
 }
 
 #hero-name {
@@ -287,7 +291,7 @@ img.displaySlide {
 }
 #level {
     font-size: 33px;
-    background-color: #BEE4D0;
+    background-color: #BEBFE4;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 400px;
@@ -298,12 +302,11 @@ img.displaySlide {
     padding-left: 25px;
     color: #DBFFCB;
 }
-
 .level-number {
     color: #FFFFFF;
-    font-weight: bold;
+    font-size: 40px;
+    margin:20px
 }
-
 /*nav {
     background-color: #BEE4D0;
     padding: 1rem;
@@ -358,6 +361,33 @@ nav h2 {
         left: 25px;
         width: 500px;
         margin: 5px;
+}
+
+.health-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+    margin-bottom: 10px;
+    padding-top: 9px;
+}
+
+.health-icon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 4px;
+}
+
+.health-value {
+    color: #FF8282;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 @media screen and (max-width: 1024px) {
