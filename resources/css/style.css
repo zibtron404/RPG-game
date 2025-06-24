@@ -26,6 +26,11 @@ h1 {
 main {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    height: 32vw;
 }
 p {
     font-size: 1vw;
@@ -76,7 +81,7 @@ p {
 }
 
 .class-selection {
-    position: relative;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,7 +117,6 @@ p {
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
     margin-top: 15px;
 }
 
@@ -193,9 +197,13 @@ img.displaySlide {
     font-size: 30px;
     color: #FF8282;
 }
-aside .class-name {
+aside {
     color: #FFFFFF;
     font-size: 25px;
+    width: 900px;
+    position: absolute;
+    left: 820px;
+    width: 400px;
 }
 
 #hero-name {
@@ -206,7 +214,7 @@ aside .class-name {
     max-width: 150px;
 }
 
-.name-selection {
+.class-info {
     background-color: #BEE4D0;
     border-radius: 15px;
     padding: 24px;
@@ -216,22 +224,24 @@ aside .class-name {
     min-height: 120px;
     color: #DBFFCB;
     font-size: 22px;
+    position: relative;
+    left: 25px;
+    width: 400px;
+    margin: 5px;
 }
 
-.name-selection div {
-    margin-top: 10px;
+.class-info div {
     align-items: center;
-    gap: 10px;
 }
 
-.name-selection label {
+.class-info label {
     font-size: 33px;
     color: #DBFFCB;
     margin-bottom: 10px;
     display: block;
 }
 
-.name-selection input {
+.class-info input {
     width: 70%;
     padding: 10px;
     font-size: 16px;
@@ -243,11 +253,11 @@ aside .class-name {
     transition: border-color 0.3s ease;
 }
 
-.name-selection input:focus {
+.class-info input:focus {
     border-color: #DBFFCB;
 }
 
-.name-selection button {
+.class-info button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #FF8282;
@@ -258,7 +268,7 @@ aside .class-name {
     transition: background-color 0.3s ease;
 }
 
-.name-selection button:hover {
+.class-info button:hover {
     background-color: #DBFFCB;
 }
 
@@ -356,63 +366,90 @@ nav h2 {
     display: flex;
     margin-bottom: 35px;
 }
-.character-info {
-        position: relative;
-        left: 25px;
-        width: 500px;
-        margin: 5px;
-}
-
 .health-circle {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
+    justify-content: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.10);
-    margin-bottom: 10px;
-    padding-top: 9px;
+    margin-left: 30px;
 }
 
 .health-icon {
-    width: 18px;
-    height: 18px;
-    margin-bottom: 4px;
+    width: 33px;
+    height: 33px;
 }
 
 .health-value {
     color: #FF8282;
-    font-size: 1.1rem;
+    font-size: 19px;
     font-weight: bold;
-    text-align: center;
 }
 
-@media screen and (max-width: 1024px) {
+.attributes-header {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1680px) {
     .class-selection {
-        width: 90%;
-        height: auto;
-        padding: 1rem;
+        width: 710px;
+        height: 775px;
+        padding: 16px;
     }
-
-    .attributes {
-        top: 10rem;
-        right: 1rem;
-        width: 90%;
+    aside {
+        left: 700px;
     }
-
-    .name-selection {
+    class-info {
         top: auto;
-        bottom: 2rem;
-        right: 1rem;
-        width: 90%;
+        bottom: 32px;
+        right: 16px;
+        width: 700px;
     }
 
     #level {
-        top: 2rem;
-        right: 1rem;
-        width: 90%;
+        top: 32px;
+        right: 16px;
+        width: 700px;
+    }
+    .slider{
+        width: 550px;
+        height: 550px;
+        margin-bottom: 5px;
+    }
+}
+@media screen and (max-width: 1560px) {
+    .class-selection {
+        width: 610px;
+        height: 775px;
+        padding: 16px;
+    }
+    aside {
+        left: 600px;
+    }
+    .slider {
+        width: 500px;
+        height: 500px;
+    }
+}
+@media screen and (max-width: 1460px) {
+    .class-selection {
+        width: 510px;
+        height: 750px;
+        padding: 16px;
+    }
+    aside {
+        left: 500px;
+    }
+    .slider {
+        width: 500px;
+        height: 500px;
+    }
+    .slides img {
+        width: 450px;
+        height: 450px;
     }
 }

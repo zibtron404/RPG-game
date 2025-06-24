@@ -1,6 +1,4 @@
-const warriorButton = document.getElementById('warrior');
-const mageButton = document.getElementById('mage');
-const archerButton = document.getElementById('archer');
+
 const characterImage = document.getElementById('character-image');
 const startGameButton = document.getElementById('start-game');
 let playerClass = null;
@@ -15,36 +13,8 @@ const mana = document.getElementById('mana');
 const stamina = document.getElementById('stamina');
 const level = document.getElementById('level');
 const name = document.getElementById('hero-name');
-const confirmNameButton = document.getElementById('confirm-name');
-const characterNameInput = document.getElementById('character-name');
-const heroNameDisplay = document.getElementById('hero-name');
 const descriptionText = document.getElementById('description-text');
 const healthValue = document.getElementById('health-value');
-
-
-confirmNameButton.addEventListener('click', () => {
-    const name = characterNameInput.value.trim();
-    if (name) {
-        heroNameDisplay.innerHTML = `<b>Your name:</b> ${name}`;
-        characterNameInput.remove();
-        confirmNameButton.remove();
-    } else {
-        heroNameDisplay.innerHTML = '<b>Your name:</b> (No name entered)';
-    }
-});
-
-characterNameInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        const name = characterNameInput.value.trim();
-        if (name) {
-            heroNameDisplay.innerHTML = `<b>Your name:</b> ${name}`;
-            characterNameInput.remove();
-            confirmNameButton.remove();
-        } else {
-            heroNameDisplay.innerHTML = '<b>Your name:</b> (No name entered)';
-        }
-    }
-});
 
 function updateAttributes(attributes) {
     strength.innerHTML = `<strong>Strength</strong>: ${attributes.strength}`;

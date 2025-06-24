@@ -32,36 +32,32 @@
                     </div>
                 </div>
             </div>
-            <div class="name-and-button">
-                <p id="hero-name"><b>Your name:</b></p>
+            <div class="start-button">
                 <a href="game.html"><button id="start-game">Start game</button></a>
             </div>
         </section>
-        <aside class="character-info">
-            <section class="name-selection">            
-                <div class="name">
-                    <input type="text" id="character-name" placeholder="Enter your name" required maxlength="15">
-                    <button id="confirm-name">Confirm Name</button>
-                </div>
+        <aside>
+            <section class="class-info">            
                 <section class="level">
-                <p id="level">Level: <span class="level-number">1</span> <span class="class-name aside">Warrior</span>
-</p>
+                <p id="level">Level: <span class="level-number">1</span> <span class="class-name aside">Warrior</span></p>
                 </section>
                  <section class="attributes">
-                    <h3>Attributes</h3>
-                        <ul>
-                            <li id="strength"><strong>Strength</strong>: 0</li>
-                            <li id="wisdom"><strong>Wisdom</strong>: 0</li>
-                            <li id="agility"><strong>Agility</strong>: 0</li>
-                            <li id="dexterity"><strong>Dexterity</strong>: 0</li>
-                            <li id="charisma"><strong>Charisma</strong>: 0</li>
-                        </ul>
+                    <div class="attributes-header">
+                        <h3>Attributes</h3>
+                        <div class="health-circle" id="health-circle">
+                            <img src="resources/images/heart.png" alt="Health" class="health-icon">
+                            <div class="health-value" id="health-value">0</div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li id="strength"><strong>Strength</strong>: 0</li>
+                        <li id="wisdom"><strong>Wisdom</strong>: 0</li>
+                        <li id="agility"><strong>Agility</strong>: 0</li>
+                        <li id="dexterity"><strong>Dexterity</strong>: 0</li>
+                        <li id="charisma"><strong>Charisma</strong>: 0</li>
+                    </ul>
                 </section>
             </section>
-            <div class="health-circle" id="health-circle">
-                <img src="resources/images/heart.png" alt="Health" class="health-icon">
-                <div class="health-value" id="health-value">0</div>
-            </div>
         </aside>
     </main>
     <footer>
