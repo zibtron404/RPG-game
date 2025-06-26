@@ -1,4 +1,3 @@
-
 const characterImage = document.getElementById('character-image');
 const startGameButton = document.getElementById('start-game');
 let playerClass = null;
@@ -42,20 +41,6 @@ const classes = {
     "Warrior Cat": { attributes: { strength: 8, wisdom: 6, agility: 9, dexterity: 8, charisma: 7, health: 12 }, image: 'resources/images/warrior-cat.png' }
 };
 
-
-startGameButton.addEventListener('click', (event) => {
-    const currentClassName = slides[slideIndex].alt; 
-    const characterNameValue = characterNameInput.value.trim(); 
-
-    if (!currentClassName || characterNameValue === '') {
-        alert('Please select a class and enter a character name before starting the game!');
-        event.preventDefault();
-    } else {
-        alert(`Starting the game as a ${currentClassName} named ${characterNameValue}!`);
-        lockClassSelection();
-    }
-});
-
 //IMAGE SLIDER 
 
 const slides = document.querySelectorAll('.slides img');
@@ -93,11 +78,6 @@ function showSlide(index) {
     }
 
     updateAttributesForSlide(index);
-}
-
-function restartInterval() {
-    clearInterval(intervalId);
-    intervalId = setInterval(nextSlide, 5000);
 }
 
 function prevSlide() {

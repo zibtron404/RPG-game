@@ -438,18 +438,87 @@ nav h2 {
 @media screen and (max-width: 1460px) {
     .class-selection {
         width: 510px;
-        height: 750px;
+        height: 650px;
         padding: 16px;
     }
     aside {
         left: 500px;
     }
     .slider {
-        width: 500px;
-        height: 500px;
+        width: 400px;
+        height: 400px;
     }
     .slides img {
-        width: 450px;
-        height: 450px;
+        width: 400px;
+        height: 400px;
+    }
+}
+@media screen and (max-width: 1345px), (max-height: 900px) {
+    .class-selection {
+        width: 420px;
+        height: 600px;
+        padding: 12px;
+    }
+    aside {
+        width: 260px;
+    }
+    .slider {
+        width: 350px;
+        height: 350px;
+    }
+    .slides img {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 900px), (max-height: 700px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .class-selection {
+        width: 95vw;
+        max-width: 350px;
+        height: 420px;
+        padding: 8px;
+    }
+    aside {
+        width: 95vw;
+        max-width: 350px;
+        margin-top: 16px;
+    }
+    .slider {
+        width: 250px;
+        height: 250px;
+    }
+    .slides img {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media screen and (max-width: 600px), (max-height: 500px) {
+    .class-selection,
+    aside {
+        width: 99vw;
+        max-width: 99vw;
+        height: auto;
+        padding: 4px;
+    }
+    .slider {
+        width: 95vw;
+        height: 160px;
+    }
+    .slides img {
+        width: 90vw;
+        height: 120px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .attributes li {
+        font-size: 14px;
     }
 }
